@@ -68,7 +68,7 @@ class SelectAutor extends Component{
 
     render(){
         return(
-            <select className="form-control" onChange={this.handleChange.bind(this)}>
+            <select className="form-control" required onChange={this.handleChange.bind(this)}>
                 <option value=''>Selecione</option>
                 {
                     this.state.autores.map(
@@ -215,7 +215,7 @@ class ListLivros extends Component {
                     <tr>
                         <th>Titulo</th>
                         <th>Ano</th>
-                        <th>Genero.</th>
+                        <th>Genero</th>
                         <th>Autor</th>
                         <th>Editora</th>
                         <th>Opções</th>
@@ -227,9 +227,9 @@ class ListLivros extends Component {
                             <tr key={livros.id}>
                                 <td>{livros.titulo}</td>
                                 <td>{livros.ano}</td>
-                                <td>{livros.id_genero}</td>
-                                <td>{livros.id_autor}</td>
-                                <td>{livros.id_editora}</td>
+                                <td>{livros.genero}</td>
+                                <td>{livros.autor}</td>
+                                <td>{livros.editora}</td>
                                 <td>
                                     <Button color="info" size="sm" onClick={e => this.onEdit(livros)}>Editar</Button>
                                     <Button color="danger" size="sm" onClick={e => this.delete(livros.id)}>Deletar</Button>
